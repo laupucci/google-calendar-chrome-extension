@@ -45,25 +45,21 @@
   padding: 1rem;
 }
 
-.eventName {
+.event {
   height: 2rem;
   margin-top: 0.5rem;
   margin-bottom: 0rem;
   border-radius: 10px;
   border: #213547;
   padding-inline: 1.5rem;
+}
+.event--name {
   width: 30rem;
 }
-.eventTime {
-  height: 2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0rem;
-  border-radius: 10px;
-  border: #213547;
-  padding-inline: 1.5rem;
+.event--time {
   width: 10rem;
 }
-.timeRow {
+.row {
   display: flex;
   flex-direction: row;
   align-items: center;

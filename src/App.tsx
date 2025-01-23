@@ -3,7 +3,7 @@ import "./styles/App.css";
 import { FIREBASE_CONFIG, signIn } from "./models/Auth";
 import { initializeApp } from "@firebase/app";
 import { getAuth } from "@firebase/auth";
-import { CustomInput } from "./components/CustomInput";
+import { Form } from "./components/Form";
 
 const firebase = initializeApp(FIREBASE_CONFIG);
 const auth = getAuth(firebase);
@@ -89,71 +89,7 @@ export const App: FC = () => {
           <button onClick={(e) => signIn(e, auth)}>Comenzar</button>
         </div>
       )}
-      <div>
-        <CustomInput
-          className="eventName"
-          type="text"
-          title="Nombre del evento"
-          value={eventDetails.name}
-          onChange={(e) =>
-            setEventDetails((prevState) => ({
-              ...prevState,
-              name: e.target.value,
-            }))
-          }
-        />
-        <CustomInput
-          className="eventTime"
-          type="date"
-          title="Fecha del evento"
-          value={eventDetails.date}
-          onChange={(e) =>
-            setEventDetails((prevState) => ({
-              ...prevState,
-              date: e.target.value,
-            }))
-          }
-        />
-        <div className="timeRow">
-          <CustomInput
-            className="eventTime"
-            type="time"
-            title="Hora de comienzo"
-            value={eventDetails.start}
-            onChange={(e) =>
-              setEventDetails((prevState) => ({
-                ...prevState,
-                start: e.target.value,
-              }))
-            }
-          />
-          <CustomInput
-            className="eventTime"
-            type="time"
-            title="Hora de finalización"
-            value={eventDetails.end}
-            onChange={(e) =>
-              setEventDetails((prevState) => ({
-                ...prevState,
-                end: e.target.value,
-              }))
-            }
-          />
-        </div>
-        <CustomInput
-          className="eventTime"
-          type="text"
-          title="Whatsapp"
-          value={eventDetails.whatsapp}
-          onChange={(e) =>
-            setEventDetails((prevState) => ({
-              ...prevState,
-              whatsapp: e.target.value,
-            }))
-          }
-        />
-      </div>
-
+      <Form eventDetails={eventDetails} setEventDetails={setEventDetails} />
       <button onClick={handleCreate}>Crear evento</button>
     </div>
   );

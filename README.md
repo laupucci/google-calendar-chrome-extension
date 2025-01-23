@@ -4,6 +4,7 @@ To make it work you need to:
 - create a google proyect
 - create a firebase console proyect
 - complete the env keys
+- run yarn install
 - run yarn buil
 - open your extension in [Chrome Extensions](chrome://extensions/)
 
